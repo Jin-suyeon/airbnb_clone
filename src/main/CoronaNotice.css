@@ -1,0 +1,14 @@
+.notice {
+    display: flex;
+    background-color:  rgb(32, 35, 36);
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+}
+
+.corona_notice {
+    color: rgb(136, 143, 150);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+}
