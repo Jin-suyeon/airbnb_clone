@@ -1,0 +1,41 @@
+.MainBanner {
+  display: flex;
+  min-width: 1200px;
+}
+
+.MainBanner_img {
+  width: 100%;
+  position: absolute;
+  bottom: 100px;
+  z-index: -1;
+  min-width: 1200px;
+}
+
+.MainBanner_text{
+  position: relative;
+  left: 100px;
+  top: 350px;
+}
+
+.MainBanner_headerText {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.MainBanner_subText {
+  margin: 10px 0px;
+  font-size: 18px;
+}
+
+.MainBanner_text > button {
+  height: 30px;
+  width: 130px;
+  background-color: rgb(32, 35, 36);
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  color: white;
+}
+
+
+
