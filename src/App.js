@@ -2,19 +2,18 @@ import './App.css';
 import CoronaNotice from './main/CoronaNotice'
 import Header from './main/Header'
 import MainBanner from './main/MainBanner';
+import Search from './main/Search';
+import TravelDestination from './main/TravelDestination';
+
 
 function App() {
   return (
     <div className="App">
-      <CoronaNotice />
-      <div className="Top">
-        <div className="Header">
+        <CoronaNotice />
           <Header />
-        </div>
-        <div className="MainBanner">
+          <Search />
           <MainBanner />
-        </div>
-      </div>
+          <TravelDestination />
     </div>
   );
 }

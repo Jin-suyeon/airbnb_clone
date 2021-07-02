@@ -3,18 +3,10 @@
   min-width: 1200px;
 }
 
-.MainBanner_img {
-  width: 100%;
-  position: absolute;
-  bottom: 100px;
-  z-index: -1;
-  min-width: 1200px;
-}
-
 .MainBanner_text{
-  position: relative;
+  position: absolute;
   left: 100px;
-  top: 350px;
+  top: 300px;
 }
 
 .MainBanner_headerText {
@@ -37,5 +29,13 @@
   color: white;
 }
 
+
+.MainBanner_img {
+  width: 100%;
+  position: absolute;
+  bottom: 100px;
+  z-index: -1;
+  min-width: 1200px;
+}
 
 
