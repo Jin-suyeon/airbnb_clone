@@ -4,16 +4,19 @@ import Header from './main/Header'
 import MainBanner from './main/MainBanner';
 import Search from './main/Search';
 import TravelDestination from './main/TravelDestination';
+import TravelStay from './main/TravelStay';
+
 
 
 function App() {
   return (
     <div className="App">
-        <CoronaNotice />
-          <Header />
-          <Search />
-          <MainBanner />
-          <TravelDestination />
+      <CoronaNotice />
+      <Header />
+      <Search />
+      <MainBanner />
+      <TravelDestination />
+      <TravelStay />
     </div>
   );
 }
