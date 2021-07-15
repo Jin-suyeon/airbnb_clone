@@ -1,16 +1,10 @@
 .container {
-  position: relative;
-  top: 730px;
   display: flex;
 }
 
 .container_sub{
   width: 100%;
   padding: 0px 70px;
-}
-
-.header{
-  justify-content: flex-start;
 }
 
 .header_sub{

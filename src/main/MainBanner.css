@@ -1,6 +1,6 @@
 .MainBanner {
   display: flex;
-  min-width: 1200px;
+  width: 100%;
 }
 
 .MainBanner_text{
@@ -35,7 +35,21 @@
   position: absolute;
   bottom: 100px;
   z-index: -1;
-  min-width: 1200px;
 }
 
+@media screen and (max-width: 740px) {
+  .MainBanner_headerText{
+    display: none;
+  }
+  .MainBanner_subText {
+    display: none;
+  }
+  .MainBanner_text > button {
+    display: none;
+  }
+
+  .MainBanner_img {
+    bottom: 90px;
+  }
+}
 

@@ -1,69 +1,97 @@
 .search {
-    width: 100%;
     display: flex;
-    position: absolute;
-    top: 130px;
-    align-items: center;
-    justify-content: center;;
+    justify-content: center;
+    padding: 0px 24px;
+}
+
+.search_app {
+    display: none;
 }
 
 .search_in {
     display: flex;
     background-color: white;
     border-radius: 100px;
-    width: 850px;
-    height: 45px;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid rgb(205, 205, 205);
     padding: 10px 10px;
-}
-
-.search_bar {
-    font-size: 40px;
-    font-weight: 100;
-    color: rgb(193, 198, 203);
-    padding-bottom: 10px;
-}
-
-
-.search_location {
+    box-shadow: 5px 5px 10px #0000003c;
+    width: 65%;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin: 20px 20px;
-    padding: 10px;
-    flex : 1 1 auto;
 }
 
-.search_boldtext{
+.search_boldtext {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 700
 }
 
 .search_inputtext {
     color: gray;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 14px;
     border: none;
     outline: none;
 }
 
-.search_findbutton{
-    display: flex;
-    background-color: rgb(215, 4, 102);
-    padding: 15px 20px;
+.search_findbutton {
+    background-color: #FF385C;
     border-radius: 100px;
-    align-items: center;
-    justify-content: center;;
+    padding: 15px
 }
 
 .search_findicon {
     color: white;
-    font-size: 15px;
 }
 
-.search_text{
-    color: white;
-    font-size: 17px;
-    font-weight: 600;
-    margin-left: 8px;
+.search_location {
+    margin-left: 20px;
+    width: 100%;
+}
+
+.search_bar {
+    border-right: 1px solid rgb(205, 205, 205);
+    width: 10px;
+    height: 30px;
+}
+
+.search_bar1 {
+    border-right: 1px solid rgb(205, 205, 205);
+    width: 10px;
+    height: 30px;
+    padding-left: 100px;
+}
+
+@media screen and (max-width: 950px) {
+    .search_in {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .search_in {
+        display: none;
+    }
+    
+    .search {
+        margin-top: 15px;
+    }
+
+    .search_app {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 1px solid rgb(205, 205, 205);
+        box-shadow: 5px 5px 10px #0000003c;
+        border-radius: 100px;
+        width: 100%;
+    }
+
+    .search_appinputtext {
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    .search_appicon {
+        margin: 15px;
+    }
 }

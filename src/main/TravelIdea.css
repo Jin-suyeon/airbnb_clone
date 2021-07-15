@@ -1,0 +1,15 @@
+.Idea {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+}
+
+.Idea_img {
+    z-index: -1;
+    width: auto;
+}
+
+.Idea_group {
+    z-index: 1;
+}

@@ -6,6 +6,11 @@ import './Search.css'
 function Search(){
   return (
     <div className="search">
+        <div className="search_app">
+            <FontAwesomeIcon className="search_appicon" icon={faSearch} />
+            <input className="search_appinputtext" type="text" placeholder="어디로 여행가세요?"></input>
+        </div>
+
         <div className="search_in">
             <span className="search_location">
                 <label className="search_button">
@@ -14,7 +19,7 @@ function Search(){
                 </label>
             </span>
 
-            <span className="search_bar">|</span>
+            <span className="search_bar1"></span>
 
             <span className="search_location">
                 <label className="search_button">
@@ -23,7 +28,7 @@ function Search(){
                 </label>
             </span>
 
-            <span className="search_bar">|</span>
+            <span className="search_bar"></span>
 
             <span className="search_location">
                 <label className="search_button">
@@ -32,7 +37,7 @@ function Search(){
                 </label>
             </span>
 
-            <span className="search_bar">|</span>
+            <span className="search_bar"></span>
 
             <span className="search_location">
                 <label className="search_button">
@@ -43,7 +48,6 @@ function Search(){
         
             <span className="search_findbutton">
                 <FontAwesomeIcon className="search_findicon" icon={faSearch} />
-                <span className="search_text">검색</span>
             </span>
         </div>
     </div>
