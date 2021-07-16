@@ -1,6 +1,4 @@
 .stay_container{
-  position: relative;
-  top: 800px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -8,28 +6,26 @@
 
 .stay_container_sub{
   width: 100%;
-  padding: 0px 70px;
+  padding: 0px 80px;
 }
 
 .stay_header{
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .stay_list {
   display: flex;
-}
-
-.stay_list_sub {
-  flex: 1 1 auto;
+  width: 100%;
   display: grid;
-  grid-template: repeat(4, auto);
+  grid-template-columns: repeat(4, auto);
+  gap: 0px 20px;
 }
 
 .stay_list_img{
-  width: 400px;
-  height: 400px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
   margin-right: 20px;
 }

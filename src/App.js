@@ -16,10 +16,9 @@ function App() {
       <Header />
       <Search />
       <MainBanner />
-      {/* 
       <TravelDestination />
       <TravelStay />
-      <TravelIdea /> */}
+      <TravelIdea />
     </div>
   );
 }

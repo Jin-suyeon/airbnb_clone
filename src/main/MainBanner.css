@@ -1,12 +1,15 @@
 .MainBanner {
   display: flex;
+  justify-content: center;
   width: 100%;
+  
 }
 
 .MainBanner_text{
-  position: absolute;
-  left: 100px;
-  top: 300px;
+  width: 100%;
+  padding-top: 180px;
+  padding-left: 80px;
+  margin-bottom: 230px;
 }
 
 .MainBanner_headerText {
@@ -37,6 +40,18 @@
   z-index: -1;
 }
 
+@media screen and (max-width: 1125px){
+  .MainBanner_text{
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: 950px){
+  .MainBanner_text{
+    margin-bottom: 200px;
+  }
+}
+
 @media screen and (max-width: 740px) {
   .MainBanner_headerText{
     display: none;
@@ -49,7 +64,14 @@
   }
 
   .MainBanner_img {
-    bottom: 90px;
+  top: 0px;
+  }
+
+  .MainBanner_text{
+    display: none;
+  }
+  .MainBanner{
+    margin-bottom: 800px;
   }
 }
 

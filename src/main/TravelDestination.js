@@ -57,17 +57,17 @@ function TravelDestination() {
   return (
     <div className="container">
       <div className="container_sub">
-        <div className="header">
-          <span className="header_sub">가까운 여행지 둘러보기</span>
+        <div className="container_header">
+          <span className="container_header_sub">가까운 여행지 둘러보기</span>
         </div>
-        <div className="list">
+        <div className="container_list">
           {list.map((el) => {
             return (
-              <a className="list_url" href={el.url}>
-                <img className="list_img" src={el.img} alt="" />
-                <div className="list_text">
-                  <span className="list_place">{el.place}</span>
-                  <span className="list_time">{el.time}</span>
+              <a className="container_list_url" href={el.url}>
+                <img className="container_list_img" src={el.img} alt="" />
+                <div className="container_list_text">
+                  <span className="container_list_place">{el.place}</span>
+                  <span className="container_list_time">{el.time}</span>
                 </div>
               </a>)
           })}
