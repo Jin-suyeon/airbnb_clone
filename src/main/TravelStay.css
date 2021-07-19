@@ -38,3 +38,9 @@
   font-weight: 600;
   font-size: 18px;
 }
+
+@media screen and (max-width:740px) {
+  .stay_container_sub{
+    padding: 0px 20px;
+  }
+}

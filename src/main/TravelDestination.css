@@ -49,3 +49,9 @@
   }
 }
 
+@media screen and (max-width: 740px){
+  .container {
+    padding: 40px 20px;
+  }
+}
+
