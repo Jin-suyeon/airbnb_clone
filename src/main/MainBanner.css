@@ -9,7 +9,6 @@
   width: 100%;
   padding-top: 100px;
   padding-left: 80px;
-  margin-bottom: 130px;
 }
 
 .MainBanner_headerText {
@@ -32,23 +31,9 @@
   color: white;
 }
 
-
-.MainBanner_img {
-  width: 100%;
-  position: absolute;
-  bottom: 100px;
-  z-index: -1;
-}
-
 @media screen and (max-width: 1125px){
   .MainBanner_text{
     padding-left: 40px;
-  }
-}
-
-@media screen and (max-width: 950px){
-  .MainBanner_text{
-    margin-bottom: 100px;
   }
 }
 
@@ -65,9 +50,6 @@
 
   .MainBanner_text{
     display: none;
-  }
-  .MainBanner{
-    margin-bottom: 530px;
   }
 }
 

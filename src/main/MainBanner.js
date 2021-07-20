@@ -18,7 +18,6 @@ function MainBanner(){
           여행 아이디어 얻기
         </button>
       </div>
-      <img className="MainBanner_img" src="img/MainBanner.jpeg" alt="MainBanner" />
     </div>
   );
 }
