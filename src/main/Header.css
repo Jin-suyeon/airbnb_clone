@@ -31,10 +31,15 @@
 .header_button_group {
     display: flex;
     align-items: center;
+    padding-left: 80px;
 }
 
 .header_button {
     padding: 8px 12px;
+}
+
+.header_button:hover {
+    color: white;
 }
 
 .header_user_group {
