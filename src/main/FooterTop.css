@@ -48,7 +48,6 @@
 
   .footertop_link{
     width: 100%;
-    /* flex-basis: calc(33%); */
-    flex-basis: calc(33%);
+    flex-basis: calc(100%/3);
   }
 }
