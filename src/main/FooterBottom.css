@@ -40,10 +40,6 @@
   display: block;
 }
 
-.FooterBottom__right_icon > ul {
-
-}
-
 .FooterBottom_right_icon > ul > li {
   list-style: none;
   float: left;
@@ -61,6 +57,7 @@
 .FooterBottom_right_text_icon > span{
   margin-left: 5px;
   text-decoration: underline;
+  font-weight: 600;
 }
 
 .FooterBottom_right_text_icon{
@@ -76,14 +73,16 @@
     margin: 0px 5px;
     display: none;
   }
+
 }
 
 @media screen and (max-width:1125px) {
   .FooterBottom{
     flex-direction: column-reverse;
+    border-top: none;
   }
   .FooterBottom_right{
-    margin-top: 30px;
+    margin: 0px;
   }
 
   .FooterBottom_left{
@@ -101,10 +100,11 @@
 
   .FooterBottom_left{
     align-items: flex-start;
-    margin: 20px 0px;
+    margin-top: 15px;
+    margin-bottom: 30px;
   }
 
   .FooterBottom_right{
-    margin-top: 20px;
+    margin-top: 0px;
   }
 }
