@@ -11,6 +11,73 @@
     padding: 0;
 }
 
+.header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header_button{
+  text-decoration: none;
+  color: black;
+}
+
+.header_button:hover + .header_underbar{
+  background-color: rgb(255, 255, 255);
+  width: 5px;
+  height: 2px;
+  animation:scale-up-hor-center .4s cubic-bezier(.39,.575,.565,1.000) both
+}
+
+.header_underbar_black{
+  background-color: rgb(0, 0, 0);
+  width: 15px;
+  height: 2px;
+}
+
+.header_underbar{
+  background-color: rgba(224, 138, 138, 0);
+  width: 15px;
+  height: 2px;
+}
+
+.search_app {
+  display: none;
+}
+
+@keyframes scale-up-hor-center{0%{transform:scaleX(.4)}100%{transform:scaleX(1)}}
+
+.header_in{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.Header_Search{
+  width: 100%;
+}
+
+.header_button_group_in{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_button_bar{
+  width: 18px;
+  height: 2px;;
+  border-radius: 1px;
+  background-color: black;
+}
+
+.header_button_none_bar{
+  width: 18px;
+  height: 2px;;
+  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -35,12 +102,19 @@
 }
 
 .header_button {
-    padding: 8px 12px;
+    padding: 8px 14px;
+}
+
+.header_none_button {
+  padding: 8px 14px;
 }
 
 .header_button:hover {
     color: white;
+    cursor: pointer;
 }
+
+@keyframes scale-up-hor-center{0%{transform:scaleX(.4)}100%{transform:scaleX(1)}}
 
 .header_user_group {
     display: flex;
@@ -89,7 +163,7 @@
 }
 
 @media screen and (max-width: 950px) {
-    .header {
+    .header_in {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -97,6 +171,7 @@
     .header_button_group {
         justify-content: center;
         width: 100%;
+        padding-left: 0px;
     }
 
     .header_user_group {
@@ -109,4 +184,28 @@
     .header {
         display: none;
     }
+
+    .search_app_padding{
+      padding: 20px;
+    }
+    
+    .search_app {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border: 1px solid rgb(205, 205, 205);
+      box-shadow: 5px 5px 10px #0000003c;
+      border-radius: 100px;
+      width: 100%;
+  }
+
+  .search_appinputtext {
+      font-size: 16px;
+      border: none;
+      outline: none;
+  }
+
+  .search_appicon {
+    margin: 15px;
+  }
 }

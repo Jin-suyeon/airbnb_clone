@@ -4,7 +4,7 @@ import FooterBottom from './main/FooterBottom';
 import FooterTop from './main/FooterTop';
 import Header from './main/Header'
 import MainBanner from './main/MainBanner';
-import Search from './main/Search';
+import Search from './main/main_search/Search';
 import TravelDestination from './main/TravelDestination';
 import TravelExperience from './main/TravelExperience';
 import TravelHosting from './main/TravelHosting';
@@ -18,13 +18,13 @@ function App() {
     <div className="App">
 
       <div className="App_mainBanner_img">
-        <img className="MainBanner_img" src="img/MainBanner.jpeg" alt="MainBanner" />
+        <img className="MainBanner_img" src="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=2560" alt="MainBanner" />
+        <img className="MainBanner_img2" src="img/MainBanner.jpeg" alt="MainBanner2" />
       </div>
 
       <div className="App_main_top">
         <CoronaNotice />
         <Header />
-        <Search />
       </div>
 
       <div className="App_mainbanner">
