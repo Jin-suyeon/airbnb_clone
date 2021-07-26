@@ -25,7 +25,8 @@
 
 .search_boldtext {
     font-size: 12px;
-    font-weight: 700
+    font-weight: 700;
+    color: black;
 }
 
 .search_inputtext {
@@ -54,6 +55,7 @@
     padding: 10px 30px;
     align-items: center;
     border-radius: 40px;
+    text-decoration: none;
 }
 
 .search_location2{

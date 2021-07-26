@@ -18,11 +18,13 @@
   position: absolute;
   top: 0px;
   width: 100%;
+  z-index: 2;
 }
 
 .App_mainbanner{
   position: absolute;
   top: 200px;
+  z-index: 1;
 }
 
 .App_footer{
