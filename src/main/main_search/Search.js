@@ -4,6 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Search.css'
 import { BrowserRouter } from 'react-router-dom';
 import SearchLocation from './search_sub_1/SearchLocation';
+import {Link} from 'react-router-dom'
 
 function Search() {
 
@@ -13,12 +14,12 @@ function Search() {
 
       <div className="search_in">
 
-        <div className="search_location">
+        <Link to='/location' className="search_location">
           <label>
             <div className="search_boldtext">위치</div>
             <input className="search_inputtext" type="text" placeholder="어디로 여행가세요?"></input>
           </label>
-        </div>
+        </Link>
 
         <span className="search_bar"></span>
 
