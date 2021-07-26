@@ -27,10 +27,10 @@ function Header() {
       <div className="header">
 
         <div className="header_in">
-          <div className="header_logo_group">
+          <Link to="/" style={{ textDecoration: 'none' }} className="header_logo_group">
             <FontAwesomeIcon className="header_logo" icon={faAirbnb} />
             <span className="header_logoname">airbnb</span>
-          </div>
+          </Link>
 
           <div className="header_button_group" >
             <Link to="/" style={{ textDecoration: 'none' }}>

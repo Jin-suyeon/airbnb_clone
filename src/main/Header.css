@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+.header_logo_group{
+  color:black;
+}
+
 .header{
   display: flex;
   flex-direction: column;
