@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Search.css'
@@ -7,6 +7,43 @@ import SearchLocation from './search_sub_1/SearchLocation';
 import CheckDate from './search_sub_1/CheckDate';
 
 function Search() {
+
+  //! 유연한 일정 클릭 시, 상단 search 변경
+  const [flexible, setFlexible] = useState(false)
+
+  //! 유연한 일정 숙박기간, 여행날짜 클릭 시, search 내용 변경
+  const [monthValue, setMonthValue] = useState("주말")
+
+  const [dayWeekMonthValue, setDayWeekMonthValue] = useState(["8월"])
+
+  const changeSearch = () => {
+    setFlexible(!flexible)
+  };
+
+  const findValue = (e) => {
+    if(e.target.innerText === "주말") setMonthValue("주말")
+    if(e.target.innerText === "일주일") setMonthValue("일주일")
+    if(e.target.innerText === "한달") setMonthValue("한달")
+  }
+
+  const findValueMonth = (e) => {
+    let filter = dayWeekMonthValue.filter((ele) => {
+      return ele !== e.target.innerText
+    })
+    console.log("filter", filter)
+
+    for(let i = 0; i<dayWeekMonthValue.length; i++) {
+      if(dayWeekMonthValue.length >= 1 && dayWeekMonthValue[i] === e.target.innerText) {
+        console.log("e.target.innerText", e.target.innerText)
+        setDayWeekMonthValue(filter)
+        console.log("after", dayWeekMonthValue)
+      } else {
+        setDayWeekMonthValue(dayWeekMonthValue.push(e.target.innerText))
+        console.log("afterpush", dayWeekMonthValue)
+      }
+    }
+ 
+  }
 
   return (
     <BrowserRouter>
@@ -23,23 +60,42 @@ function Search() {
 
         <span className="search_bar"></span>
 
-        <Link to="/checkdate" className="search_location">
-          <label>
+          {flexible===false 
+            ? <Link to="/checkdate" className="search_location">
+              <label>
             <div className="search_boldtext">체크인</div>
             <div className="search_inputtext">날짜 입력</div>
           </label>
-        </Link>
+          </Link>
+            : <Link to="/checkdate" className="search_location">
+              <label>
+            <div className="search_boldtext">유연한 일정</div>
+            <div 
+              className="search_inputtext_bold"
+            >
+            {dayWeekMonthValue}의 {monthValue}
+            </div>
+          </label>
+          </Link>
+          }
 
-        <span className="search_bar"></span>
+        {flexible===false 
+          ? <span className="search_bar"></span>
+          : null
+        } 
 
-        <Link to="/checkdate" className="search_location">
-          <label>
+          {flexible===false 
+            ?  <Link to="/checkdate" className="search_location">
+              <label>
             <div className="search_boldtext">체크아웃</div>
             <div className="search_inputtext">날짜 입력</div>
           </label>
-        </Link>
+          </Link>
+            : null
+          }
 
         <span className="search_bar"></span>
+        
 
         <Link to="/personnel" className="search_location">
           <label className="search_button">
@@ -61,7 +117,7 @@ function Search() {
       </Route>
 
       <Route exact path="/checkdate">
-        <CheckDate />
+        <CheckDate changeSearch={changeSearch} findValue={findValue} findValueMonth={findValueMonth}/>
       </Route>
 
       <Route exact path="/personnel">
