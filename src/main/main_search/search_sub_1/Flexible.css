@@ -1,106 +1,121 @@
 /* flexible */
 
 .flexible_container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .flexible {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .flexible_text {
-    color: gray;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .flexible_top_button {
-    display: flex;
-    width: 230px;
-    height: 50px;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .flexible_button {
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid rgb(197, 197, 197);
-    background-color: white;
-  }
-  
-  .flexible_button_bold {
-    padding: 9px 19px;
-    border-radius: 20px;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: white;
-  }
-  
-  .flexible_button:hover {
-    border: 1px solid black;
-  }
-  
-  .flexible_month_container {
-    display: flex;
-    width: 740px;
-  }
-  
-  .flexible_month {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  
-  .flexible_month_button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 115px;
-    height: 130px;
-    border-radius: 15px;
-    border: 1px solid rgb(197, 197, 197);
-  }
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-  .flexible_month_button_bold {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 115px;
-    height: 130px;
-    border-radius: 15px;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgba(237, 237, 237, 0.379);
-  }
-  
-  .flexible_month_button:hover {
-    border: 1px solid black;
-  }
-  
-  .flexible_month_button_icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: rgb(197, 197, 197);
-  }
+.flexible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .flexible_month_button_icon_bold {
-    font-size: 30px;
-    margin-bottom: 10px;
-    color: rgb(0, 0, 0);
-  }
+.flexible_text {
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
 
-  .flexible_month_button_bold > span {
-    font-size: 12px;
-  }
-  
-  .flexible_month_button > span {
-    font-size: 12px;
-  }
-  
+.flexible_top_button {
+  display: flex;
+  width: 230px;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.flexible_button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(197, 197, 197);
+  background-color: white;
+}
+
+.flexible_button:hover {
+  cursor: pointer;
+}
+
+.flexible_button_bold {
+  padding: 9px 19px;
+  border-radius: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(237, 237, 237, 0.379);
+}
+
+.flexible_button:hover {
+  border: 1px solid black;
+}
+
+.flexible_month_container {
+  display: flex;
+  width: 740px;
+}
+
+.flexible_month {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.flexible_month_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  height: 130px;
+  border-radius: 15px;
+  border: 1px solid rgb(197, 197, 197);
+}
+
+.flexible_month_button:hover {
+  cursor: pointer;
+}
+
+.flexible_month_button_bold {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  height: 130px;
+  border-radius: 15px;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(237, 237, 237, 0.379);
+}
+
+.flexible_month_button_bold:hover {
+  cursor: pointer;
+}
+
+.flexible_month_button:hover {
+  border: 1px solid black;
+}
+
+.flexible_month_button_icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgb(197, 197, 197);
+}
+
+.flexible_month_button_icon_bold {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.flexible_month_button_bold > span {
+  font-size: 12px;
+}
+
+.flexible_month_button > span {
+  font-size: 12px;
+}
+
+.active {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.226);
+}

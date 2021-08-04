@@ -1,17 +1,17 @@
 import React from "react";
-import { useState } from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import "./CheckDate.css";
 import Flexible from "./Flexible";
 import Calendar from "./Calendar";
 
-function CheckDate({ changeSearch, findValue, findValueMonth }) {
-  const [button, setButton] = useState(true);
-
-  const trueOrFalse = () => {
-    setButton(!button);
-  };
-
+function CheckDate({
+  changeSearch,
+  findValue,
+  findValueMonth,
+  flexibleTopBottom,
+  dayWeekButton,
+  choiceMonth,
+}) {
   return (
     <BrowserRouter>
       <div className="checkdate_container">
@@ -20,18 +20,22 @@ function CheckDate({ changeSearch, findValue, findValueMonth }) {
             <div className="checkdate_header">
               <Link
                 to="/checkdate"
-                onClick={trueOrFalse}
+                onClick={changeSearch}
                 className={
-                  button === true ? "checkdate_button_T" : "checkdate_button_F"
+                  flexibleTopBottom === false
+                    ? "checkdate_button_T"
+                    : "checkdate_button_F"
                 }
               >
                 달력
               </Link>
               <Link
                 to="/flexible"
-                onClick={trueOrFalse, changeSearch}
+                onClick={changeSearch}
                 className={
-                  button === false ? "checkdate_button_T" : "checkdate_button_F"
+                  flexibleTopBottom === true
+                    ? "checkdate_button_T"
+                    : "checkdate_button_F"
                 }
               >
                 유연한 일정
@@ -43,7 +47,12 @@ function CheckDate({ changeSearch, findValue, findValueMonth }) {
               <Calendar />
             </Route>
             <Route exact path="/flexible">
-              <Flexible findValue={findValue} findValueMonth={findValueMonth}/>
+              <Flexible
+                dayWeekButton={dayWeekButton}
+                findValue={findValue}
+                findValueMonth={findValueMonth}
+                choiceMonth={choiceMonth}
+              />
             </Route>
           </Switch>
         </div>
