@@ -30,6 +30,8 @@ function Search() {
     false,
   ]);
 
+  const [shadow, setShadow] = useState([false, false, false, false, false]);
+
   //! usestate 이용한 함수
   // 1. 유연한 일정 클릭 시, search (상단버튼, 하단 내용변경)
   const changeSearch = () => {
@@ -75,26 +77,29 @@ function Search() {
     }
   };
 
-  //! 일반 함수
-  // search bar 선택시 그림자 생성
   const clickButtonShadow = (e) => {
-    let btn1 = document.getElementsByClassName("search_location");
-    if(btn1.classList.toggle("active") === true) {
-      btn1.target.classList.toggle("active", false)
-    }
-
-    e.target.classList.toggle("active");
+    const newArr = new Array(5).fill(false);
+    newArr[Number(e.target.type)] = true;
+    setShadow(newArr);
+    backgroundGrey();
   };
+
+  const backgroundGrey = () => {};
+
+  //! 일반 함수 active를 활용한 클래스변경
+  // const clickButtonShadow = (e) => {
+  //   e.target.classList.toggle("active");
+  // };
 
   return (
     <BrowserRouter>
       <div className="search">
         <div className="search_in">
           <Link
-            id="1"
+            type="0"
             onClick={clickButtonShadow}
             to="/location"
-            className="search_location"
+            className={shadow[0] ? "search_location_shadow" : "search_location"}
           >
             <label>
               <div className="search_boldtext">위치</div>
@@ -110,10 +115,12 @@ function Search() {
 
           {flexibleTopBottom === false ? (
             <Link
-              id="2"
+              type="1"
               onClick={clickButtonShadow}
               to="/checkdate"
-              className="search_location"
+              className={
+                shadow[1] ? "search_location_shadow" : "search_location"
+              }
             >
               <label>
                 <div className="search_boldtext">체크인</div>
@@ -122,10 +129,14 @@ function Search() {
             </Link>
           ) : (
             <Link
-              id="3"
+              type="2"
               onClick={clickButtonShadow}
               to="/checkdate"
-              className="search_location_flexible"
+              className={
+                shadow[2]
+                  ? "search_location_flexible_shadow"
+                  : "search_location_flexible"
+              }
             >
               <label>
                 <div className="search_boldtext">유연한 일정</div>
@@ -142,10 +153,12 @@ function Search() {
 
           {flexibleTopBottom === false ? (
             <Link
-              id="4"
+              type="3"
               onClick={clickButtonShadow}
               to="/checkdate"
-              className="search_location"
+              className={
+                shadow[3] ? "search_location_shadow" : "search_location"
+              }
             >
               <label>
                 <div className="search_boldtext">체크아웃</div>
@@ -157,10 +170,10 @@ function Search() {
           <span className="search_bar"></span>
 
           <Link
-            id="5"
+            type="4"
             onClick={clickButtonShadow}
             to="/personnel"
-            className="search_location"
+            className={shadow[4] ? "search_location_shadow" : "search_location"}
           >
             <label className="search_button">
               <div className="search_boldtext">인원</div>
