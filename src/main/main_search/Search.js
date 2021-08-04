@@ -78,8 +78,11 @@ function Search() {
   //! 일반 함수
   // search bar 선택시 그림자 생성
   const clickButtonShadow = (e) => {
-    const btn1 = document.getElementById("search_location");
-    btn1.classList.toggle("active", false);
+    let btn1 = document.getElementsByClassName("search_location");
+    if(btn1.classList.toggle("active") === true) {
+      btn1.target.classList.toggle("active", false)
+    }
+
     e.target.classList.toggle("active");
   };
 
@@ -88,6 +91,7 @@ function Search() {
       <div className="search">
         <div className="search_in">
           <Link
+            id="1"
             onClick={clickButtonShadow}
             to="/location"
             className="search_location"
@@ -106,6 +110,7 @@ function Search() {
 
           {flexibleTopBottom === false ? (
             <Link
+              id="2"
               onClick={clickButtonShadow}
               to="/checkdate"
               className="search_location"
@@ -117,6 +122,7 @@ function Search() {
             </Link>
           ) : (
             <Link
+              id="3"
               onClick={clickButtonShadow}
               to="/checkdate"
               className="search_location_flexible"
@@ -136,6 +142,7 @@ function Search() {
 
           {flexibleTopBottom === false ? (
             <Link
+              id="4"
               onClick={clickButtonShadow}
               to="/checkdate"
               className="search_location"
@@ -150,6 +157,7 @@ function Search() {
           <span className="search_bar"></span>
 
           <Link
+            id="5"
             onClick={clickButtonShadow}
             to="/personnel"
             className="search_location"
