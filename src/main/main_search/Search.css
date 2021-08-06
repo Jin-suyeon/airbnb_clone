@@ -23,6 +23,19 @@
   margin-bottom: 20px;
 }
 
+.search_in_grey {
+  height: 65px;
+  display: flex;
+  background-color: rgb(250, 250, 250);
+  border-radius: 100px;
+  border: 1px solid rgb(205, 205, 205);
+  box-shadow: 5px 5px 10px #0000003c;
+  width: 860px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .search_boldtext {
   font-size: 12px;
   font-weight: 700;
@@ -68,6 +81,7 @@
 }
 
 .search_location_shadow {
+  background-color: white;
   display: flex;
   justify-content: space-between;
   flex: 1 1 auto;
@@ -92,6 +106,7 @@
 }
 
 .search_location_flexible_shadow {
+  background-color: white;
   display: flex;
   justify-content: space-between;
   flex: 1 1 auto;

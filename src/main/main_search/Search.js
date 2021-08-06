@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faIgloo, faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./Search.css";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import SearchLocation from "./search_sub_1/SearchLocation";
 import CheckDate from "./search_sub_1/CheckDate";
+import Personal from "./search_sub_1/Personal";
 
 function Search() {
   //! useState
@@ -30,7 +31,14 @@ function Search() {
     false,
   ]);
 
+  // 6. search bar 그림자
   const [shadow, setShadow] = useState([false, false, false, false, false]);
+
+  // 7. search 배경화면 컬러 변경
+  const [background, setBackground] = useState(false);
+  
+  // 8. 인원수
+  const [guest, setGuest] = useState([0,0,0])
 
   //! usestate 이용한 함수
   // 1. 유연한 일정 클릭 시, search (상단버튼, 하단 내용변경)
@@ -77,6 +85,7 @@ function Search() {
     }
   };
 
+  // 6. search bar 그림자
   const clickButtonShadow = (e) => {
     const newArr = new Array(5).fill(false);
     newArr[Number(e.target.type)] = true;
@@ -84,7 +93,23 @@ function Search() {
     backgroundGrey();
   };
 
-  const backgroundGrey = () => {};
+  // 7. search 배경화면 컬러 변경
+  const backgroundGrey = () => {
+    setBackground(true);
+  };
+
+  //8. 인원 +,-
+  console.log(guest)
+  const plusButton = (e) => {
+    console.log(e.target.type)
+    guest[Number(e.target.type)] = guest[Number(e.target.type)] + 1
+    setGuest(guest)
+    console.log(guest)
+  }
+
+  const minusButton = () => {
+    
+  }
 
   //! 일반 함수 active를 활용한 클래스변경
   // const clickButtonShadow = (e) => {
@@ -94,7 +119,7 @@ function Search() {
   return (
     <BrowserRouter>
       <div className="search">
-        <div className="search_in">
+        <div className={background ? "search_in_grey" : "search_in"}>
           <Link
             type="0"
             onClick={clickButtonShadow}
@@ -129,11 +154,11 @@ function Search() {
             </Link>
           ) : (
             <Link
-              type="2"
+              type="1"
               onClick={clickButtonShadow}
               to="/checkdate"
               className={
-                shadow[2]
+                shadow[1] || shadow[3]
                   ? "search_location_flexible_shadow"
                   : "search_location_flexible"
               }
@@ -204,7 +229,7 @@ function Search() {
         </Route>
 
         <Route exact path="/personnel">
-          <SearchLocation />
+          <Personal plusButton={plusButton} guest={guest} />
         </Route>
       </Switch>
     </BrowserRouter>
