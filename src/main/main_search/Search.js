@@ -169,10 +169,12 @@ function Search() {
                 shadow[3] ? "search_location_shadow" : "search_location"
               }
             >
-              <label>
-                <div className="search_boldtext">체크아웃</div>
-                <div className="search_inputtext">날짜 입력</div>
-              </label>
+              <div>
+                <label>
+                  <div className="search_boldtext">체크아웃</div>
+                  <div className="search_inputtext">날짜 입력</div>
+                </label>
+              </div>
             </Link>
           ) : null}
 
