@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faIgloo, faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./Search.css";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import SearchLocation from "./search_sub_1/SearchLocation";
@@ -36,6 +36,9 @@ function Search() {
 
   // 7. search 배경화면 컬러 변경
   const [background, setBackground] = useState(false);
+  
+  // 8. 인원수
+  const [guest, setGuest] = useState([0,0,0])
 
   //! usestate 이용한 함수
   // 1. 유연한 일정 클릭 시, search (상단버튼, 하단 내용변경)
@@ -94,6 +97,19 @@ function Search() {
   const backgroundGrey = () => {
     setBackground(true);
   };
+
+  //8. 인원 +,-
+  console.log(guest)
+  const plusButton = (e) => {
+    console.log(e.target.type)
+    guest[Number(e.target.type)] = guest[Number(e.target.type)] + 1
+    setGuest(guest)
+    console.log(guest)
+  }
+
+  const minusButton = () => {
+    
+  }
 
   //! 일반 함수 active를 활용한 클래스변경
   // const clickButtonShadow = (e) => {
@@ -215,7 +231,7 @@ function Search() {
         </Route>
 
         <Route exact path="/personnel">
-          <Personal />
+          <Personal plusButton={plusButton} guest={guest} />
         </Route>
       </Switch>
     </BrowserRouter>
