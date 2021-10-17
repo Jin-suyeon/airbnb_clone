@@ -54,13 +54,35 @@
   width: 30px;
   height: 30px;
   border-radius: 30px;
-  border: 1px solid gainsboro;
+  border: 1px solid rgb(154, 153, 153);
+  color: rgb(154, 153, 153);
+}
+
+.personal_sub_2_operator_gray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: 1px solid rgb(227, 227, 227);
+  color:rgb(227, 227, 227);
 }
 
 .personal_sub_2_icon {
   font-size: 12px;
+  color: gray;
+}
+
+.personal_sub_2_icon_gray {
+  font-size: 12px;
+  color: rgb(227, 227, 227);
 }
 
 .personal_sub_2_num {
-  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 20px;
 }

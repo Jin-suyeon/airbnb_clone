@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAirbnb } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faGlobe, faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,8 @@ import OnlineExperience from './main_search/OnlineExperience';
 function Header() {
   const [button, setButton] = useState(0)
 
+  const [scrollPosition, setScrollPosition] = useState(0)
+
   const handleClickButton = (e) => {
     console.log(e.target.innerText)
     if (e.target.innerText === "숙소") {
@@ -22,28 +24,44 @@ function Header() {
     }
   }
 
+  //console.log(scrollPosition)
+  //! header 변경 함수
+  //! window.scrollY : 문서가 수직으로 얼마나 스크롤 됐는지 픽셀 단위로 반환한다
+  //! document.documentElement.scrollTop : y축 방향으로 스크롤한 거리
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop)
+  }
+  //console.log(scrollPosition)
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll)
+  }) 
+
   return (
     <BrowserRouter>
-      <div className="header">
+      <div className={scrollPosition < 60 ? "header" : "header_change"}>
 
         <div className="header_in">
           <Link to="/" style={{ textDecoration: 'none' }} className="header_logo_group">
-            <FontAwesomeIcon className="header_logo" icon={faAirbnb} />
-            <span className="header_logoname">airbnb</span>
+            <FontAwesomeIcon className={scrollPosition < 60 ? "header_logo" : "header_logo_red" } icon={faAirbnb} />
+            <span className={scrollPosition < 60 ? "header_logoname" : "header_logoname_red" } >airbnb</span>
           </Link>
 
-          <div className="header_button_group" >
+
+          {scrollPosition < 60 
+           ? <div className="header_button_group" >
             <Link to="/" style={{ textDecoration: 'none' }}>
               <div className="header_button_group_in">
                 <span onClick={handleClickButton} className="header_button">숙소</span>
                 <span className={button === 0 ? "header_underbar_black" : "header_underbar"}></span>
               </div>
             </Link>
+            
             <Link to="/experience" style={{ textDecoration: 'none' }}>
               <div className="header_button_group_in">
                 <span onClick={handleClickButton} className="header_button">체험</span>
                 <span className={button === 1 ? "header_underbar_black" : "header_underbar"}></span>
-              </div>
+              </div>  
             </Link>
             {/* <Link to="/online/experience" style={{ textDecoration: 'none' }}> */}
             <div onClick="location.href='/online/experience';" className="header_button_group_in">
@@ -52,6 +70,17 @@ function Header() {
             </div>
             {/* </Link> */}
           </div>
+          : <div className="header_button_group">
+             <div className="header_scroll_search">
+              <span className="header_scroll_search_text">검색 시작하기</span>
+              <span className="header_scroll_search_button">
+                <FontAwesomeIcon
+                  className="header_scroll_search_icon"
+                  icon={faSearch}
+                />
+              </span>
+            </div>
+            </div>}
 
           <div className="header_user_group">
             <span className="header_host">호스트 되기</span>
@@ -65,11 +94,15 @@ function Header() {
         <Switch>
 
           <Route exact path="/">
-            <Search />
+            <div className={scrollPosition < 60 ? "" : "search_none"}>
+              <Search />
+            </div>
           </Route>
 
           <Route exact path="/experience">
-            <Search2 />
+            <div className={scrollPosition < 60 ? "" : "search_none"}>
+              <Search2 />
+            </div>
           </Route>
 
           <Route exact path="/online/experience">

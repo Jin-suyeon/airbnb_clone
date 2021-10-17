@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Personal.css";
 
-function Personal({ plusButton, guest }) {
+function Personal({ plusButton, guest, minusButton }) {
   return (
     <div className="personal_container">
       <div className="personal">
@@ -33,8 +33,22 @@ function Personal({ plusButton, guest }) {
             <span className="personal_sub_text">만 2~12세</span>
           </div>
           <div className="personal_sub_2">
-            <span className="personal_sub_2_operator" type="1">
-              <FontAwesomeIcon className="personal_sub_2_icon" icon={faMinus} />
+            <span
+              className={
+                guest[1] === 0
+                  ? "personal_sub_2_operator_gray"
+                  : "personal_sub_2_operator"
+              }
+              onClick={() => minusButton(1)}
+            >
+              <FontAwesomeIcon
+                className={
+                  guest[1] === 0
+                    ? "personal_sub_2_icon_gray"
+                    : "personal_sub_2_icon"
+                }
+                icon={faMinus}
+              />
             </span>
             <span className="personal_sub_2_num">{guest[1]}</span>
             <span
@@ -53,8 +67,22 @@ function Personal({ plusButton, guest }) {
             <span className="personal_sub_text">만 2세 미만</span>
           </div>
           <div className="personal_sub_2">
-            <span className="personal_sub_2_operator" type="2">
-              <FontAwesomeIcon className="personal_sub_2_icon" icon={faMinus} />
+            <span
+              className={
+                guest[2] === 0
+                  ? "personal_sub_2_operator_gray"
+                  : "personal_sub_2_operator"
+              }
+              onClick={() => minusButton(2)}
+            >
+              <FontAwesomeIcon
+                className={
+                  guest[2] === 0
+                    ? "personal_sub_2_icon_gray"
+                    : "personal_sub_2_icon"
+                }
+                icon={faMinus}
+              />
             </span>
             <span className="personal_sub_2_num">{guest[2]}</span>
             <span

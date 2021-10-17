@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faIgloo, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./Search.css";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import SearchLocation from "./search_sub_1/SearchLocation";
@@ -39,6 +39,9 @@ function Search() {
 
   // 8. 인원수
   const [guest, setGuest] = useState([0, 0, 0]);
+
+  // 9. 총 인원 텍스트 변경
+  const [guestValue, setGuestValue] = useState(0);
 
   //! usestate 이용한 함수
   // 1. 유연한 일정 클릭 시, search (상단버튼, 하단 내용변경)
@@ -202,7 +205,13 @@ function Search() {
           >
             <label className="search_button">
               <div className="search_boldtext">인원</div>
-              <div className="search_inputtext">게스트 추가</div>
+              <div
+                className={
+                  guestValue > 0 ? "search_inputtext_bold" : "search_inputtext"
+                }
+              >
+                {guestValue > 0 ? `게스트 ${guestValue}명` : "게스트 추가"}
+              </div>
             </label>
 
             <span className="search_findbutton">
@@ -229,7 +238,11 @@ function Search() {
         </Route>
 
         <Route exact path="/personnel">
-          <Personal plusButton={plusButton} guest={guest} />
+          <Personal
+            plusButton={plusButton}
+            minusButton={minusButton}
+            guest={guest}
+          />
         </Route>
       </Switch>
     </BrowserRouter>
