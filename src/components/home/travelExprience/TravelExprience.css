@@ -1,0 +1,54 @@
+.experience_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.experience_container_sub {
+  width: 100%;
+  padding: 0px 80px;
+}
+
+.experience_header {
+  font-size: 30px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.experience_list {
+  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0px 20px;
+}
+
+.experience_list_img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.experience_list_textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.experience_list_maintext {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.experience_list_text {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 740px) {
+  .experience_container_sub {
+    padding: 0px 20px;
+  }
+}
